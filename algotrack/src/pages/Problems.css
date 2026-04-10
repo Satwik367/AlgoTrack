@@ -1,0 +1,155 @@
+.filters-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+ 
+.filters-bar input,
+.filters-bar select {
+  width: auto;
+}
+ 
+.problem-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+ 
+.problems-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+ 
+.problem-row {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  transition: border-color 0.18s;
+}
+ 
+.problem-row:hover {
+  border-color: var(--border2);
+}
+ 
+.problem-row.solved {
+  opacity: 0.65;
+}
+ 
+.problem-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+}
+ 
+.check-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--border2);
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.18s;
+}
+ 
+.check-btn.checked {
+  background: rgba(52, 211, 153, 0.15);
+  border-color: var(--green);
+  color: var(--green);
+}
+ 
+.check-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+ 
+.problem-name {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+ 
+.problem-link {
+  color: var(--accent);
+}
+ 
+.problem-link:hover {
+  text-decoration: underline;
+}
+ 
+.problem-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+ 
+.tag-pill {
+  background: rgba(129, 140, 248, 0.12);
+  color: var(--accent2);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+ 
+.platform-pill {
+  background: var(--bg3);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+ 
+.problem-notes {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+  cursor: pointer;
+  line-height: 1.5;
+}
+ 
+.problem-notes:hover {
+  color: var(--text);
+}
+ 
+.problem-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+ 
+.empty-state {
+  text-align: center;
+  padding: 60px;
+  color: var(--muted);
+  font-size: 14px;
+}
+ 
+.add-form {
+  animation: slideDown 0.2s ease;
+}
+ 
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+ 
+@media (max-width: 700px) {
+  .problem-form { grid-template-columns: 1fr 1fr; }
+}

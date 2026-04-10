@@ -1,0 +1,134 @@
+.cf-connect-card {
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+.cf-input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cf-error {
+  color: var(--red);
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.cf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cf-profile-card {
+  grid-column: 1 / -1;
+}
+
+.cf-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cf-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--border2);
+}
+
+.cf-handle {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.cf-rank {
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.cf-stats-row {
+  display: flex;
+  gap: 32px;
+}
+
+.cf-stat {
+  flex: 1;
+}
+
+.cf-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cf-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cf-tag-name {
+  font-size: 12px;
+  color: var(--text);
+  min-width: 120px;
+}
+
+.cf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.cf-table th {
+  text-align: left;
+  padding: 8px 12px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.cf-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cf-table tr:last-child td {
+  border-bottom: none;
+}
+
+.cf-table tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+.cf-empty {
+  text-align: center;
+  padding: 80px 40px;
+  color: var(--muted);
+}
+
+.cf-empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+
+.cf-empty p {
+  font-size: 14px;
+  max-width: 360px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .cf-grid { grid-template-columns: 1fr; }
+  .cf-profile-card { grid-column: 1; }
+  .cf-stats-row { flex-wrap: wrap; gap: 16px; }
+}

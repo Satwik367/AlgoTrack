@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Environment variables (NEVER commit these)
+.env
+*.env
+.env.local
+.env.development
+.env.production
+
+# Build output
+/algotrack/build
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Package lock (optional, remove if you want to commit it)
+# package-lock.json
