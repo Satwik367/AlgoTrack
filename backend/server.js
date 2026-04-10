@@ -11,9 +11,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
  
-// ⚠️ Replace with your MongoDB URI (use .env in production)
-const MONGO_URI = "mongodb+srv://satwikmaiti:kiwtas1234@cluster0.phnn7lt.mongodb.net/algotrack?retryWrites=true&w=majority";
- 
+require("dotenv").config();
+const MONGO_URI = process.env.MONGO_URI;
+
 mongoose.connect(MONGO_URI)
   .then(() => console.log("✅ DB Connected"))
   .catch(err => console.log("❌ DB Error:", err));
