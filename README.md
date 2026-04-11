@@ -36,35 +36,33 @@ A full-stack DSA (Data Structures & Algorithms) problem tracking platform to mon
 - Backend → Render
 - Database → MongoDB Atlas
 
----
-
 ## Project Structure
 
+```
 AlgoTrack/
 ├── backend/
-│ ├── models/
-│ │ ├── Problem.js
-│ │ └── UserSettings.js
-│ ├── routes/
-│ │ ├── problems.js
-│ │ ├── codeforces.js
-│ │ └── settings.js
-│ └── server.js
+│   ├── models/
+│   │   ├── Problem.js
+│   │   └── UserSettings.js
+│   ├── routes/
+│   │   ├── problems.js
+│   │   ├── codeforces.js
+│   │   └── settings.js
+│   └── server.js
 │
 └── algotrack/
-└── src/
-├── pages/
-│ ├── Dashboard.js
-│ ├── Problems.js
-│ ├── Analytics.js
-│ └── Codeforces.js
-├── utils/
-│ ├── api.js
-│ ├── cache.js
-│ └── keepAlive.js
-└── App.js
-
----
+    └── src/
+        ├── pages/
+        │   ├── Dashboard.js
+        │   ├── Problems.js
+        │   ├── Analytics.js
+        │   └── Codeforces.js
+        ├── utils/
+        │   ├── api.js
+        │   ├── cache.js
+        │   └── keepAlive.js
+        └── App.js
+```
 
 ## Getting Started
 
