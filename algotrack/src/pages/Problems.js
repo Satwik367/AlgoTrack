@@ -1,3 +1,4 @@
+import { cachedFetch } from "../utils/cache";
 import { useState, useEffect } from "react";
 import { api } from "../utils/api";
 import "./Problems.css";
@@ -17,7 +18,7 @@ export default function Problems() {
   useEffect(() => { load(); }, []);
  
   const load = () => {
-    api.getProblems().then(data => {
+    cachedFetch("problems", api.getProblems).then(data => {
       setProblems(Array.isArray(data) ? data : []);
       setLoading(false);
     });

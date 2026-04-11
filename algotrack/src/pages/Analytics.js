@@ -1,3 +1,4 @@
+import { cachedFetch } from "../utils/cache";
 import { useState, useEffect } from "react";
 import { api } from "../utils/api";
 import {
@@ -17,7 +18,7 @@ export default function Analytics() {
   const [loading, setLoading] = useState(true);
  
   useEffect(() => {
-    api.getAnalytics().then(d => { setData(d); setLoading(false); }).catch(() => setLoading(false));
+    cachedFetch("analytics", api.getAnalytics).then(d => { setData(d); setLoading(false); }).catch(() => setLoading(false));
   }, []);
  
   if (loading) return <div className="loading">Loading analytics...</div>;

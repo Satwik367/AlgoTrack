@@ -1,3 +1,4 @@
+import { cachedFetch } from "../utils/cache";
 import { useState, useEffect } from "react";
 import { api } from "../utils/api";
 import { RadialBarChart, RadialBar, ResponsiveContainer, Tooltip } from "recharts";
@@ -8,10 +9,10 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
  
   useEffect(() => {
-    api.getAnalytics().then(data => {
+    cachedFetch("analytics", api.getAnalytics).then(data => {
       setAnalytics(data);
       setLoading(false);
-    }).catch(() => setLoading(false));
+  }).catch(() => setLoading(false));
   }, []);
  
   if (loading) return <div className="loading">Loading dashboard...</div>;
