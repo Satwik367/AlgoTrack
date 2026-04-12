@@ -1,5 +1,5 @@
 const BASE = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
- 
+
 export const api = {
   getProblems: (params = {}) => {
     const q = new URLSearchParams(params).toString();
@@ -19,6 +19,13 @@ export const api = {
   getAnalytics: () => fetch(`${BASE}/problems/analytics/summary`).then(r => r.json()),
   getCFUser: (handle) => fetch(`${BASE}/codeforces/user/${handle}`).then(r => r.json()),
   getCFContests: (handle) => fetch(`${BASE}/codeforces/contests/${handle}`).then(r => r.json()),
+  getCFSolved: (handle) => fetch(`${BASE}/codeforces/solved/${handle}`).then(r => r.json()),
+  getCFRecommendations: (handle) => fetch(`${BASE}/codeforces/recommendations/${handle}`).then(r => r.json()),
+  bulkImport: (problems) => fetch(`${BASE}/problems/import`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ problems }),
+  }).then(r => r.json()),
   getSettings: () => fetch(`${BASE}/settings`).then(r => r.json()),
   updateSettings: (data) => fetch(`${BASE}/settings`, {
     method: "PATCH",
@@ -26,4 +33,3 @@ export const api = {
     body: JSON.stringify(data),
   }).then(r => r.json()),
 };
- 

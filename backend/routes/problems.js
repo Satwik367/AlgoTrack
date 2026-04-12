@@ -82,5 +82,26 @@ router.get("/analytics/summary", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+// POST bulk import problems
+router.post("/import", async (req, res) => {
+  try {
+    const { problems } = req.body;
+    if (!problems || !problems.length) return res.status(400).json({ error: "No problems provided" });
+
+    // get existing problem names to avoid duplicates
+    const existing = await Problem.find({ platform: "Codeforces" }).select("name");
+    const existingNames = new Set(existing.map(p => p.name));
+
+    const newProblems = problems.filter(p => !existingNames.has(p.name));
+
+    if (newProblems.length === 0) return res.json({ imported: 0, message: "No new problems to import" });
+
+    await Problem.insertMany(newProblems);
+    res.json({ imported: newProblems.length, message: `Imported ${newProblems.length} problems` });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
  
 module.exports = router;
